@@ -1,9 +1,12 @@
+import { useLocalSearchParams } from "expo-router";
 import { StyleSheet, Text, View } from "react-native";
 
 export default function DetailsPage() {
+  const { id } = useLocalSearchParams()
+
   return (
     <View style={styles.containers}>
-      <Text>Details</Text>
+      <Text>Details {id}</Text>
     </View>
   )
 }

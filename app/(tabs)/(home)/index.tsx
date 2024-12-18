@@ -3,6 +3,7 @@ import { Button, Text, View } from "react-native";
 
 export default function HomePage() {
   const router = useRouter()
+  const id = mockUseFetchId()
 
   return (
     <View
@@ -13,7 +14,11 @@ export default function HomePage() {
       }}
     >
       <Text>Home</Text>
-        <Button title="View Details" onPress={() => router.push('/details')} />
+      <Button title="View Details" onPress={() => router.push(`/details/${id}`)} />
     </View>
   );
+}
+
+const mockUseFetchId = () => {
+  return Math.random().toString(36).substring(7)
 }
